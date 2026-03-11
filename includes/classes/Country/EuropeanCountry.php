@@ -8,4 +8,8 @@ use MyProject\Country;
 
 class EuropeanCountry extends Country
 {
+    public function describe(): void
+    {
+        echo $this->flagEmoji . " " . $this->name . " is a European country.";
+    }
 }
