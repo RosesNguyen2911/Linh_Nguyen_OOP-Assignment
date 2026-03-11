@@ -24,7 +24,7 @@ class Country
     // Display each flag belonging to each country.
     public function describe(): void
     {
-        echo $this->flagEmoji . " " . $this->name . " is a country.";
+        echo $this->name . " is a country.";
     }
 
     // Display the capital city of the country.
