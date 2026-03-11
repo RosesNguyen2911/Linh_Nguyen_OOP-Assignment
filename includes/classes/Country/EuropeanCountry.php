@@ -10,6 +10,6 @@ class EuropeanCountry extends Country
 {
     public function describe(): void
     {
-        echo $this->flagEmoji . " " . $this->name . " is a European country.";
+        echo $this->name . " is a country in Europe.";
     }
 }
