@@ -10,6 +10,6 @@ trait TourismTrait
      
     public function recommendDestination(): void
     {
-        echo $this->name . " is a great destination for travelers.";
+        echo $this->name . " is a great destination for travelers because " . $this->tourismReason . ".";
     }
 }

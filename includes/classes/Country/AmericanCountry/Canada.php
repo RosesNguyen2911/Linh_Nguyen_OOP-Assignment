@@ -10,4 +10,6 @@ use MyProject\TourismTrait;
 class Canada extends AmericanCountry
 {
     use TourismTrait;
+
+    public string $tourismReason = "of its vast national parks, mountains, and lakes";
 }

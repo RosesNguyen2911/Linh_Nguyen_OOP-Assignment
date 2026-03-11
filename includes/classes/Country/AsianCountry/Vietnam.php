@@ -10,4 +10,6 @@ use MyProject\TourismTrait;
 class Vietnam extends AsianCountry
 {
     use TourismTrait;
+
+    public string $tourismReason = "of its beautiful landscapes, street food, and rich culture";
 }

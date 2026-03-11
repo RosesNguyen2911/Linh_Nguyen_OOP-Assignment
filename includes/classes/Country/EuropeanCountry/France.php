@@ -10,4 +10,6 @@ use MyProject\TourismTrait;
 class France extends EuropeanCountry
 {
     use TourismTrait;
+
+    public string $tourismReason = "of its famous cuisine, art, and historic landmarks";
 }
