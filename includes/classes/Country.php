@@ -45,7 +45,7 @@ class Country
      *
      * @param string $name The name of the country
      * @param string $capital The capital city
-     * @param int $population The population size
+     * @param int $population The population size of the country
      * @param string $flagEmoji The emoji flag representing the country
      */
     public function __construct(string $name, string $capital, int $population, string $flagEmoji)
