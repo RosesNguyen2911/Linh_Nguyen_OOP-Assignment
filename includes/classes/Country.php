@@ -3,9 +3,8 @@
 namespace MyProject;
 
 /**
- * Class Country
- *
  * Represents a generic country object.
+ *
  * This class defines common properties and methods shared by all countries.
  */
 class Country
@@ -39,12 +38,10 @@ class Country
     public string $flagEmoji;
 
     /**
-     * Country constructor.
-     *
      * Creates a new country object with its main properties.
      *
      * @param string $name The name of the country
-     * @param string $capital The capital city
+     * @param string $capital The capital city of the country
      * @param int $population The population size of the country
      * @param string $flagEmoji The emoji flag representing the country
      */
@@ -83,6 +80,6 @@ class Country
      */
     public function showPopulation(): void
     {
-        echo $this->name . " has a population of " . $this->population . ".";
+        echo $this->name . " has a population of " . number_format($this->population) . ".";
     }
 }
