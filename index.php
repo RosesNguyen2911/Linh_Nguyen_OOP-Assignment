@@ -1,41 +1,45 @@
 <?php
-    spl_autoload_register(function ($class) {
-        // var_dump($class);
 
-        $class = str_replace('MyProject\\', '', $class);
-        // var_dump($class);    
-        $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
-        // var_dump($class);
+/**
+ * Autoload project classes.
+ */
+spl_autoload_register(function ($class) {
+    $class = str_replace('MyProject\\', '', $class);
+    $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
 
-        $filepath = __DIR__ .  '/includes/classes/' . $class . '.php';
-        $filepath = str_replace("/", DIRECTORY_SEPARATOR, $filepath); 
-        // var_dump($filepath);
-        require_once $filepath;
-    });
+    $filepath = __DIR__ . '/includes/classes/' . $class . '.php';
+    $filepath = str_replace('/', DIRECTORY_SEPARATOR, $filepath);
+
+    require_once $filepath;
+});
 
 require_once __DIR__ . '/includes/traits/TourismTrait.php';
 
-// Create country objects grouped by region.
+/**
+ * Create country objects grouped by region.
+ */
 
 // EUROPE
-$france = new MyProject\Country\EuropeanCountry\France("France", "Paris", 68400000, "🇫🇷");
-$germany = new MyProject\Country\EuropeanCountry\Germany("Germany", "Berlin", 84400000, "🇩🇪");
-$italy = new MyProject\Country\EuropeanCountry\Italy("Italy", "Rome", 58900000, "🇮🇹");
-$uk = new MyProject\Country\EuropeanCountry\UnitedKingdom("United Kingdom", "London", 67900000, "🇬🇧");
+$france = new MyProject\Country\EuropeanCountry\France(68400000);
+$germany = new MyProject\Country\EuropeanCountry\Germany(84400000);
+$italy = new MyProject\Country\EuropeanCountry\Italy(58900000);
+$uk = new MyProject\Country\EuropeanCountry\UnitedKingdom(67900000);
 
 // ASIA
-$vietnam = new MyProject\Country\AsianCountry\Vietnam("Vietnam", "Hanoi", 100300000, "🇻🇳");
-$japan = new MyProject\Country\AsianCountry\Japan("Japan", "Tokyo", 123000000, "🇯🇵");
-$korea = new MyProject\Country\AsianCountry\SouthKorea("South Korea", "Seoul", 51700000, "🇰🇷");
-$china = new MyProject\Country\AsianCountry\China("China", "Beijing", 1409000000, "🇨🇳");
+$vietnam = new MyProject\Country\AsianCountry\Vietnam(100300000);
+$japan = new MyProject\Country\AsianCountry\Japan(123000000);
+$korea = new MyProject\Country\AsianCountry\SouthKorea(51700000);
+$china = new MyProject\Country\AsianCountry\China(1409000000);
 
 // AMERICAS
-$canada = new MyProject\Country\AmericanCountry\Canada("Canada", "Ottawa", 41000000, "🇨🇦");
-$usa = new MyProject\Country\AmericanCountry\UnitedStates("United States", "Washington D.C.", 335000000, "🇺🇸");
-$mexico = new MyProject\Country\AmericanCountry\Mexico("Mexico", "Mexico City", 129000000, "🇲🇽");
-$brazil = new MyProject\Country\AmericanCountry\Brazil("Brazil", "Brasilia", 203000000, "🇧🇷");
+$canada = new MyProject\Country\AmericanCountry\Canada(41000000);
+$usa = new MyProject\Country\AmericanCountry\UnitedStates(335000000);
+$mexico = new MyProject\Country\AmericanCountry\Mexico(129000000);
+$brazil = new MyProject\Country\AmericanCountry\Brazil(203000000);
 
-// Store all country objects in an array for display.
+/**
+ * Store all country objects in an array for display.
+ */
 $countries = [
     $france, $germany, $italy, $uk,
     $vietnam, $japan, $korea, $china,
